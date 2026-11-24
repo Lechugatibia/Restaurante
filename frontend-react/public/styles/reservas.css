@@ -1,0 +1,81 @@
+/*nav*/
+body {
+    margin: 0;
+
+}
+
+/*titulo*/
+.titulo {
+    color: rgb(21, 18, 18);
+    margin-left: 10px;
+    font-family: "Lobster Two", sans-serif;
+}
+
+/*links*/
+.nav-link {
+    color: rgb(14 12 12) !important;
+}
+
+/*formulario*/
+.form-container {
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+}
+
+.form-container h2 {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/*inputs*/
+.form-control {
+    background-color: transparent !important;
+    border: 2px solid #000000;
+    color: #60605c !important;
+    font-family: "Cause", cursive;
+    font-size: 15px;
+}
+
+.form-control:focus {
+    border-color: #ced3a3;
+    outline: none;
+    box-shadow: none;
+}
+
+::placeholder {
+    color: #60605c !important;
+    font-family: "Cause", cursive;
+}
+
+/*iconos*/
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    background: linear-gradient(135deg, #93b5cf, #13191a);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+/*boton*/
+.boton {
+    background-color: #000000;
+    border: none;
+    color: #fff;
+    font-family: "Cause", cursive;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #bfbea6;
+}
+

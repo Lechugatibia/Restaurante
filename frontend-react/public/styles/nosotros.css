@@ -1,0 +1,210 @@
+/* FUENTES */
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px;
+}
+/*historia*/
+.Historia {
+    text-align: center;
+    padding: 60px 120px;
+}
+
+.Historia h1 {
+    font-family: "Oleo Script", system-ui;
+    font-size: 50px;
+}
+
+.Historia p {
+    font-family: "Cause", cursive;
+    font-size: 20px;
+}
+
+/*hero*/
+.hero-banner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.hero-banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/*texto*/
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h1 {
+    font-family: "Oleo Script", system-ui;
+    font-size: 50px;
+}
+
+.content p {
+    font-family: "Cause", cursive;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/*imagen principal*/
+.container-imagenes {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;/
+}
+
+.main-image {
+    width: 80%;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/*imagenes chicas*/
+.img-banner-1,
+.img-banner-2 {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.img-banner-1 {
+    bottom: 5%;
+    left: -30px;
+}
+
+.img-banner-2 {
+    top: 10%;
+    right: -30px;
+}
+
+/*reverso*/
+.hero-banner.reverse .container {
+    flex-direction: row-reverse;
+}
+
+/*Miembros*/
+.containerteam {
+    padding: 0 80px;
+}
+
+.intro-text h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Oleo Script", system-ui;
+    font-size: 50px;
+}
+
+.intro-text p {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: "Cause", cursive;
+    font-size: 20px;
+}
+
+/*Tarjetas*/
+.team-miembros {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.team-miembros:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.team-miembros img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: -8px -8px 0 black;
+}
+
+
+
+/*repsonsivo*/
+@media (max-width: 768px) {
+
+    /*historia*/
+    .Historia {
+        padding: 40px 20px;
+    }
+
+    /*hero*/
+    .hero-banner {
+        padding: 60px 20px;
+    }
+
+    .hero-banner .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-banner.reverse .container {
+        flex-direction: column;
+    }
+
+    .content {
+        order: 1;
+    }
+
+    .container-imagenes {
+        order: 2;
+        margin: 20px 0;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .main-image {
+        width: 60%;
+    }
+
+    .img-banner-1,
+    .img-banner-2 {
+        width: 80px;
+        height: 80px;
+        border-width: 3px;
+    }
+
+    .img-banner-1 {
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .img-banner-2 {
+        right: 10px;
+        top: 10px;
+    }
+
+    /* TEAM */
+    .containerteam {
+        padding: 0 20px;
+    }
+}
