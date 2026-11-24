@@ -1,111 +1,524 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+/*Menu y footer*/
+html,
+body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 65px;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+footer {
+    margin-top: auto;
+}
+/*Nav*/
+.custom-navbar {
+    background-color: rgb(251, 251, 251);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+.titulo {
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    font-style: italic;
+    color: rgb(21, 18, 18);
+    margin-left: 20px;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.nav-link {
+    color: #666777;
+    position: relative;
+    font-family: "Cause", cursive;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+.nav-link:hover,
+.nav-link.active {
+    color: #465e6b;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background-color: #939475fb;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+
+.container h1 {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+}
+
+.container h2 {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-family: "Oleo Script", system-ui;
+    padding: 30px;
+}
+
+h4 {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* =========================================
+   5. CARRUSEL (INDEX)
+   ========================================= */
+.carousel-item {
+    height: 450px;
+    background-color: black;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    bottom: 20%;
+}
+
+.carousel-caption h2 {
+    color: white;
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.carousel-caption p {
+    color: lightgrey;
+    font-size: 1.1rem;
+    font-family: "Cause", cursive;
+    font-optical-sizing: auto;
+    font-weight: 450;
+}
+
+/* inicio y nosotros */
+.bienvenida {
+    padding: 110px 0;
+    background-color: rgb(208, 237, 222);
+}
+
+.bienvenida h2 {
+    font-size: 52px;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 25px;
+}
+
+.bienvenida-text {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.mini-title {
+    letter-spacing: 4px;
+    color: #b68b45;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.ambiente-section {
+    padding: 110px 0;
+    background-color: white;
+}
+
+.ambiente-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.stats-section {
+    padding: 90px 0;
+    color: black;
+}
+
+.stats-section h2 {
+    font-size: 58px;
+    color: #d6b36a;
+    margin-bottom: 15px;
+}
+
+.stats-section p {
+    font-size: 18px;
+}
+
+/*tarjetas de productos*/
+.tarjeta-enlace {
+    text-decoration: none;
+    color: black;
+}
+
+.tarjeta-caja {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-caja:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta-caja img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.tarjeta-info {
+    padding: 15px;
+}
+
+.tarjeta-info h3 {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.tarjeta-info p {
+    color: grey;
+    font-size: 0.9rem;
+}
+
+.card-body h5 {
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+}
+
+.card-body p {
+    font-family: "Cause", cursive;
+    font-optical-sizing: auto;
+    font-weight: 450;
+}
+
+.card-food {
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: rgb(203, 30, 30);
+    transition: 0.4s;
+}
+
+.card-food img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.food-body {
+    padding: 20px 10px;
+}
+
+.food-body h3 {
+    font-size: 26px;
+    padding: 0;
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+}
+
+.food-body p {
+    color: #666;
+}
+
+.btn-menu {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400;
+    font-size: 25px;
+    font-style: normal;
+}
+
+.btn-menu:hover {
+    background-color: #333;
+    color: white;
+}
+
+
+.form-container {
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+}
+
+.form-container h2 {
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.form-control {
+    background-color: transparent !important;
+    border: 1px solid #000000;
+    color: #60605c !important;
+    font-family: "Cause", cursive;
+    font-size: 15px;
+}
+
+.form-control:focus {
+    border-color: #ced3a3;
+    outline: none;
+    box-shadow: none;
+}
+
+::placeholder {
+    color: #60605c !important;
+    font-family: "Cause", cursive;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    background: linear-gradient(135deg, #93b5cf, #13191a);
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.boton {
+    background-color: #000000;
+    border: none;
+    color: #fff;
+    font-family: "Cause", cursive;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #bfbea6;
+}
+
+.map-container {
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* footer */
+.footer {
+    background-color: #111;
+    color: white;
+    padding: 40px 0 10px;
+}
+
+.footer-title {
+    font-family: "Lobster Two", sans-serif;
+    font-size: 28px;
+}
+
+.footer-subtitle {
+    margin-bottom: 15px;
+    font-family: "Lobster Two", sans-serif;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #e67e7e;
+}
+
+.footer-bottom {
+    border-top: 1px solid #b0aaaa;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: "Cause", cursive;
+    font-optical-sizing: auto;
+    font-weight: 450;
+}
+
+.col-md-4 p {
+    font-size: 16px;
+    font-family: "Cause", cursive;
+    font-optical-sizing: auto;
+    font-weight: 450;
+}
+
+/* responsivo */
+
+/* Móviles (hasta 768px) */
+@media (max-width: 768px) {
+    .titulo {
+        margin-left: 10px;
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .container h1 {
+        font-size: 36px;
+    }
+
+    .bienvenida,
+    .ambiente-section {
+        padding: 60px 15px;
+    }
+
+    .bienvenida h2 {
+        font-size: 36px;
+    }
+
+    .ambiente-img {
+        height: 300px;
+    }
+
+    .carousel-item {
+        height: 300px;
+    }
+
+    .carousel-caption {
+        bottom: 10%;
+        padding: 12px;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.4rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+
+    .stats-section {
+        padding: 50px 15px;
+    }
+
+    .stats-section h2 {
+        font-size: 40px;
+    }
+
+    /* contacto en celular */
+    .row {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .form-container h2 {
+        font-size: 24px;
+    }
+
+    .icon {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* Tablets  */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .map-container {
+       height: 400px;
+    }
+
+    .form-container {
+        max-width: 100%;
+        padding: 35px;
+    }
+
+    .ambiente-img {
+        height: 400px;
+    }
+}
+
+/* Escritorio grande */
+@media (min-width: 1200px) {
+    .form-container {
+        max-width: 450px;
+    }
+
+    .map-container {
+       height: 550px;
+    }
 }

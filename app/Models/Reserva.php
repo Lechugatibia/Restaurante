@@ -13,10 +13,13 @@ class Reserva extends Model
     protected $fillable = [
         'id_cliente',
         'id_mesa',
+        'nombre_completo', //Nuevo
+        'correo',          //Nuevo
+        'numero_personas', //Nuevo
         'fecha_reserva',
         'hora_reserva',
         'estado',
-        'notas'
+        'notas',
     ];
 
     // La reserva pertenece a un cliente
